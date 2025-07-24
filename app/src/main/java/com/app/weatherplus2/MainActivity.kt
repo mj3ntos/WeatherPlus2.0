@@ -1,6 +1,8 @@
 package com.app.weatherplus2
 
+import android.R.attr.apiKey
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -16,6 +18,10 @@ import com.app.weatherplus2.ui.theme.WeatherPlusTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val apiKey = BuildConfig.API_KEY
+        Log.i("tag", apiKey)
+        
         enableEdgeToEdge()
         setContent {
             WeatherPlusTheme {

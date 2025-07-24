@@ -1,5 +1,7 @@
 package com.app.weatherplus2.data.model
 
+import com.google.gson.annotations.SerializedName
+
 
 data class WeatherResponse(
     val base: String,
@@ -14,7 +16,8 @@ data class WeatherResponse(
     val main: Main,
     val wind: Wind,
     val clouds: Clouds,
-    val sys: Sys
+    val sys: Sys,
+    val rain: Rain?
 )
 
 data class Coord(
@@ -43,6 +46,11 @@ data class Main(
 data class Wind(
     val speed: Float,
     val deg: Int
+)
+
+data class Rain(
+    @SerializedName("1h")
+    val lastHour: Float
 )
 
 data class Clouds(
